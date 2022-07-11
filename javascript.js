@@ -17,14 +17,34 @@ const playRound = ( playerSelection, computerSelection) => {
     console.log(playerSelection);
     console.log(computerSelection);
     if (playerSelection === computerSelection) {
-        return "It's a tie!"
+        return alert(`You: ${playerSelection} Computer: ${computerSelection}
+        It's a tie!`);
     } else if ( (playerSelection === "ROCK" && computerSelection === "SCISSORS") || (playerSelection === "PAPER" && computerSelection === "ROCK") || (playerSelection === "SCISSORS" && computerSelection === "PAPER")) {
         playerScore++;
-        return "You win!";
+        return alert(`You: ${playerSelection} Computer: ${computerSelection}
+         You win!`);
     } else {
         computerScore++;
-        return "You lose!";
+        return alert(`You: ${playerSelection} Computer: ${computerSelection}
+        You lose!`);
     }
 }
 
-console.log (playRound());
+//console.log (playRound());
+//console.log(playerScore);
+//console.log(computerScore);
+
+const game = () => {
+    for (let i = 0; i < 5; i++) {
+        playRound();
+     }
+    if ( playerScore > computerScore) {
+        return `Your score is ${playerScore} - ${computerScore}. You won!`
+    } else if ( playerScore === computerScore) {
+        return `Your score is ${playerScore} - ${computerScore}. It's a tie!`
+    } else {
+        return `Your score is ${playerScore} - ${computerScore}. You lost!`
+    }
+}
+
+console.log (game());
