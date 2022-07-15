@@ -9,42 +9,82 @@ const computerPlay = () => {
     return array[choice]
 }
 //console.log(computerPlay());
+const results = document.querySelector('.results');
+const content = document.createElement('div');
+content.classList.add('results');
+const you = document.querySelector('#you');    
+const comp = document.querySelector('#comp');
 
-const playRound = ( playerSelection, computerSelection) => {
-    playerSelection = prompt("Type your selection (Paper, Rock or scissors)");
+
+
+const playRound = (playerSelection) => {
+    
     computerSelection = computerPlay();
     playerSelection = playerSelection.toUpperCase();
     //console.log(playerSelection);
     //console.log(computerSelection);
     if (playerSelection === computerSelection) {
-        return console.log(`You: ${playerSelection} Computer: ${computerSelection}
-        It's a tie!`);
+        return results.textContent = `You: ${playerSelection} Computer: ${computerSelection}
+        It's a tie!`;
     } else if ( (playerSelection === "ROCK" && computerSelection === "SCISSORS") || (playerSelection === "PAPER" && computerSelection === "ROCK") || (playerSelection === "SCISSORS" && computerSelection === "PAPER")) {
-        playerScore++;
-        return console.log(`You: ${playerSelection} Computer: ${computerSelection}
-         You win!`);
+        playerScore += 1;
+        return results.textContent = `You: ${playerSelection} Computer: ${computerSelection}`;
     } else {
-        computerScore++;
-        return console.log(`You: ${playerSelection} Computer: ${computerSelection}
-        You lose!`);
+        computerScore += 1;
+        return results.textContent =`You: ${playerSelection} Computer: ${computerSelection}`;
     }
 }
 
-//console.log (playRound());
-//console.log(playerScore);
-//console.log(computerScore);
-
-const game = () => {
-    for (let i = 0; i < 5; i++) {
-        playRound();
-     }
-    if ( playerScore > computerScore) {
-        return `Your score is ${playerScore} - ${computerScore}. You won!`
-    } else if ( playerScore === computerScore) {
-        return `Your score is ${playerScore} - ${computerScore}. It's a tie!`
-    } else {
-        return `Your score is ${playerScore} - ${computerScore}. You lost!`
+const rock = document.querySelector('#rock');
+rock.addEventListener('click', () => {
+    playRound("rock");
+    showResults();
+    if (playerScore===5) {
+        results.textContent = "You won the match!";
+        playerScore= 0;
+        computerScore=0;
+    } else if (playerScore===5) {
+        results.textContent = "You won the match!";
+        playerScore= 0;
+        computerScore=0;
     }
-}
+});
+const paper = document.querySelector('#paper');
+paper.addEventListener('click', () => {
+    playRound("paper");
+    showResults();
+    if (playerScore===5) {
+        results.textContent = "You won the match!";
+        playerScore= 0;
+        computerScore=0;
+    } else if (playerScore===5) {
+        results.textContent = "You won the match!";
+        playerScore= 0;
+        computerScore=0;
+    }
+});
+const scissors = document.querySelector('#scissors');
+scissors.addEventListener('click', () => {
+    playRound("scissors");
+    showResults();
+    if (playerScore===5) {
+        results.textContent = "You won the match!";
+        playerScore= 0;
+        computerScore=0;
+    } else if (playerScore===5) {
+        results.textContent = "You won the match!";
+        playerScore= 0;
+        computerScore=0;
+    }
+});
 
-console.log (game());
+
+
+let showResults = () => { 
+    you.textContent = playerScore;
+    comp.textContent = computerScore;
+
+};
+
+
+
