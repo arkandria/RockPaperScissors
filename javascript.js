@@ -14,18 +14,18 @@ const playRound = ( playerSelection, computerSelection) => {
     playerSelection = prompt("Type your selection (Paper, Rock or scissors)");
     computerSelection = computerPlay();
     playerSelection = playerSelection.toUpperCase();
-    console.log(playerSelection);
-    console.log(computerSelection);
+    //console.log(playerSelection);
+    //console.log(computerSelection);
     if (playerSelection === computerSelection) {
-        return alert(`You: ${playerSelection} Computer: ${computerSelection}
+        return console.log(`You: ${playerSelection} Computer: ${computerSelection}
         It's a tie!`);
     } else if ( (playerSelection === "ROCK" && computerSelection === "SCISSORS") || (playerSelection === "PAPER" && computerSelection === "ROCK") || (playerSelection === "SCISSORS" && computerSelection === "PAPER")) {
         playerScore++;
-        return alert(`You: ${playerSelection} Computer: ${computerSelection}
+        return console.log(`You: ${playerSelection} Computer: ${computerSelection}
          You win!`);
     } else {
         computerScore++;
-        return alert(`You: ${playerSelection} Computer: ${computerSelection}
+        return console.log(`You: ${playerSelection} Computer: ${computerSelection}
         You lose!`);
     }
 }
