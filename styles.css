@@ -1,0 +1,46 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+
+    gap: 50px;
+
+}
+
+.container {
+    flex-direction: column;
+    background-image: url(marcus-wallis-R1qHDAEnCmc-unsplash.jpg) ;
+    width: 640px;
+    height: 426px;
+    margin: auto;
+}
+
+h1 {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.404);
+}
+
+.results {
+    width: 640px;
+    color: whitesmoke;
+    background-color: rgba(0, 0, 0, 0.404);
+    font-weight: bold;
+}
+
+button {
+    padding: 30px 40px;
+    background-color: rgba(25, 94, 121, 0.63);
+    color:aliceblue;
+    border-radius: 25px;
+    border-style: none;
+    font-size: 20px;
+}
+
+span {
+    color: rgb(34, 185, 255);
+}

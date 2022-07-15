@@ -38,13 +38,19 @@ const playRound = (playerSelection) => {
 const rock = document.querySelector('#rock');
 rock.addEventListener('click', () => {
     playRound("rock");
+    results.style.color = 'white';
+    results.style.fontSize= "25px";
     showResults();
     if (playerScore===5) {
         results.textContent = "You won the match!";
+        results.style.color = 'lightskyblue';
+        results.style.fontSize = "40px";
         playerScore= 0;
         computerScore=0;
-    } else if (playerScore===5) {
-        results.textContent = "You won the match!";
+    } else if (computerScore===5) {
+        results.textContent = "You lost the match!";
+        results.style.color = 'lightskyblue';
+        results.style.fontSize = "40px";
         playerScore= 0;
         computerScore=0;
     }
@@ -52,13 +58,19 @@ rock.addEventListener('click', () => {
 const paper = document.querySelector('#paper');
 paper.addEventListener('click', () => {
     playRound("paper");
+    results.style.color = 'white';
+    results.style.fontSize = "25px";
     showResults();
     if (playerScore===5) {
         results.textContent = "You won the match!";
+        results.style.color = 'lightskyblue';
+        results.style.fontSize = "40px";
         playerScore= 0;
         computerScore=0;
-    } else if (playerScore===5) {
-        results.textContent = "You won the match!";
+    } else if (computerScore===5) {
+        results.textContent = "You lost the match!";
+        results.style.color = 'lightskyblue';
+        results.style.fontSize = "40px";
         playerScore= 0;
         computerScore=0;
     }
@@ -66,13 +78,19 @@ paper.addEventListener('click', () => {
 const scissors = document.querySelector('#scissors');
 scissors.addEventListener('click', () => {
     playRound("scissors");
+    results.style.color = 'white';
+    results.style.fontSize = "25px";
     showResults();
     if (playerScore===5) {
         results.textContent = "You won the match!";
+        results.style.color = 'lightskyblue';
+        results.style.fontSize = "40px";
         playerScore= 0;
         computerScore=0;
-    } else if (playerScore===5) {
-        results.textContent = "You won the match!";
+    } else if (computerScore===5) {
+        results.textContent = "You lost the match!";
+        results.style.color = 'lightskyblue';
+        results.style.fontSize = "40px";
         playerScore= 0;
         computerScore=0;
     }
